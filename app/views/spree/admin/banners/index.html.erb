@@ -1,0 +1,44 @@
+<% content_for :page_actions do %>
+  <li><%= button_link_to t("static_content.new_page"), new_object_url, :icon => 'icon-plus' %></li>
+<% end %>
+
+<% content_for :page_title do %>
+   <%= "Banners" %>
+<% end %>
+
+<table class="index">
+  <colgroup>
+    <col style="width: 40%" />
+    <col style="width: 40%" />
+    <col style="width: 10%" />
+    <col style="width: 10%" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th><%= "name" %></th>
+      <th><%= "links to" %></th>
+      <th><%= "visible" %></th>
+      <th class="actions"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @banners.each do |banner| %>
+      <tr class="<%= cycle('odd', 'even') %>" id="<%= dom_id banner %>">
+        <td>
+          <%= banner.name %>
+        </td>
+        <td>
+          <%= banner.link %>
+        </td>
+        <td class="align-center">
+          <%= content_tag(:i, '', :class => 'icon-ok green') if banner.visible %>
+        </td>
+        <td  class="actions">
+          <%= link_to_edit banner, :no_text => true %>
+          <%= link_to_delete banner, :no_text => true %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
