@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="alpha ten columns">
+    <%= f.field_container :name do %>
+      <%= f.label :name %> <span class="required">*</span><br />
+      <%= f.text_field :name, :class => 'fullwidth title' %>
+      <%= f.error_message_on :title %>
+    <% end %>
+
+    <%= f.field_container :link do %>
+      <%= f.label :link %> <span class="required">*</span><br />
+      <%= f.text_field :link, :class => 'fullwidth title' %>
+      <%= f.error_message_on :link %>
+    <% end %>
+
+    <%= f.field_container :visible do %>
+      <%= f.check_box :visible %>
+      <%= f.label :visible %>
+    <% end %>
+  </div>
+</div>
