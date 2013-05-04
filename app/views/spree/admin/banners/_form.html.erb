@@ -12,9 +12,15 @@
       <%= f.error_message_on :link %>
     <% end %>
 
+
     <%= f.field_container :visible do %>
       <%= f.check_box :visible %>
       <%= f.label :visible %>
+    <% end %>
+
+    <%= f.field_container :image do %>
+      <%= f.label :image, "Image" %><br />
+      <%= f.file_field :image %>
     <% end %>
   </div>
 </div>

@@ -8,6 +8,7 @@
 
 <%= render "spree/shared/error_messages", :target => @banner %>
 
+
 <%= form_for [:admin, @banner] do |f| %>
   <fieldset class="no-border-top">
     <%= render :partial => 'form', :locals => { :f => f } %>
