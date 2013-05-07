@@ -1,6 +1,11 @@
-<% content_for :page_actions do %>
-  <li><%= button_link_to t("static_content.new_page"), new_object_url, :icon => 'icon-plus' %></li>
-<% end %>
+<div class='toolbar'>
+  <ul class='actions'>
+    <li id="new_banner_link">
+      <%= button_link_to "new banner", new_admin_banner_url, {:icon => 'add'} %>
+    </li>
+  </ul>
+  <br class='clear' />
+</div>
 
 <% content_for :page_title do %>
    <%= "Banners" %>
